@@ -97,13 +97,16 @@ public class GameMain extends JPanel implements ActionListener, MouseListener{
 			statusBar.setForeground(Color.BLACK);          
 			if (currentPlayer == Player.Cross) {   
 			
-				//TODO: use the status bar to display the message "X"'s Turn
-
+				//TODO(done): use the status bar to display the message "X"'s Turn
+				statusBar.setForeground(Color.RED);          
+				statusBar.setText("X's turn!");
 				
 			} else {    
 				
-				//TODO: use the status bar to display the message "O"'s Turn
-
+				//TODO(done): use the status bar to display the message "O"'s Turn
+				statusBar.setForeground(Color.RED);          
+				statusBar.setText("O's turn!");
+				       
 				
 			}       
 			} else if (currentState == GameState.Draw) {          
