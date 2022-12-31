@@ -4,7 +4,7 @@ import javax.swing.*;
 
 
 
-public class GameMain extends JPanel implements MouseListener{
+public class GameMain extends JPanel implements ActionListener, MouseListener{
 	//Constants for game 
 	// number of ROWS by COLS cell constants 
 	public static final int ROWS = 3;     
@@ -39,8 +39,8 @@ public class GameMain extends JPanel implements MouseListener{
 	/** Constructor to setup the UI and game components on the panel */
 	public GameMain() {   
 		
-		// TODO: This JPanel fires a MouseEvent on MouseClicked so add required event listener to 'this'.          
-	    
+		// TODO(done): This JPanel fires a MouseEvent on MouseClicked so add required event listener to 'this'.          
+		addMouseListener(this);
 	    
 		// Setup the status bar (JLabel) to display status message       
 		statusBar = new JLabel("         ");       
@@ -158,10 +158,10 @@ public class GameMain extends JPanel implements MouseListener{
 		 *  UpdateGame is called which will call the methods to check for winner or Draw. if none then GameState remains playing.
 		 *  If win or Draw then call is made to method that resets the game board.  Finally a call is made to refresh the canvas so that new symbol appears*/
 	
-	public void mouseClicked(MouseEvent e) {  
+	public void mouseClicked(MouseEvent event) {  
 	    // get the coordinates of where the click event happened            
-		int mouseX = e.getX();             
-		int mouseY = e.getY();             
+		int mouseX = event.getX();             
+		int mouseY = event.getY();             
 		// Get the row and column clicked             
 		int rowSelected = mouseY / CELL_SIZE;             
 		int colSelected = mouseX / CELL_SIZE;               			
@@ -184,29 +184,35 @@ public class GameMain extends JPanel implements MouseListener{
 			initGame();            
 		}   
 		
-		//TODO: redraw the graphics on the UI          
-           
+		//TODO (done): redraw the graphics on the UI          
+		repaint();  
 	}
 		
 	
 	@Override
-	public void mousePressed(MouseEvent e) {
+	public void mousePressed(MouseEvent event) {
 		//  Auto-generated, event not used
 		
 	}
 	@Override
-	public void mouseReleased(MouseEvent e) {
+	public void mouseReleased(MouseEvent event) {
 		//  Auto-generated, event not used
 		
 	}
 	@Override
-	public void mouseEntered(MouseEvent e) {
+	public void mouseEntered(MouseEvent event) {
 		// Auto-generated,event not used
 		
 	}
 	@Override
-	public void mouseExited(MouseEvent e) {
+	public void mouseExited(MouseEvent event) {
 		// Auto-generated, event not used
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent event) {
+		repaint(); //redraw the graphics on the UI
 		
 	}
 
