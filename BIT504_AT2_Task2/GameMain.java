@@ -144,16 +144,29 @@ public class GameMain extends JPanel implements ActionListener, MouseListener{
 			//check for win after play
 			if(board.hasWon(thePlayer, row, col)) {
 				
-				// TODO: check which player has won and update the currentstate to the appropriate gamestate for the winner
-
+				// TODO(done): check which player has won and update the currentstate to the appropriate gamestate for the winner
+				if(thePlayer.equals(Player.Cross)) {
+					 currentState = GameState.Cross_won;
+					}
+					if(thePlayer.equals(Player.Nought)) {
+						 currentState = GameState.Nought_won;
+					}
 				
 			} else 
 				if (board.isDraw ()) {
 					
-				// TODO: set the currentstate to the draw gamestate
-
+				// TODO(done): set the currentstate to the draw gamestate
+					if(thePlayer.equals(Player.Cross)) {
+						currentState = GameState.Draw;
+					}
+					if(thePlayer.equals(Player.Nought)) {
+						currentState = GameState.Draw;
+					}
 			}
 			//otherwise no change to current state of playing
+				else {
+					currentState = GameState.Playing;
+				}
 		}
 		
 				
