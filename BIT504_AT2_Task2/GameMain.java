@@ -70,16 +70,17 @@ public class GameMain extends JPanel implements ActionListener, MouseListener{
 				//create a main window to contain the panel
 				JFrame frame = new JFrame(TITLE);
 				
-				//TODO: create the new GameMain panel and add it to the frame
-						
+				//TODO(done): create the new GameMain panel and add it to the frame
+				frame.setContentPane(new GameMain());		
 				
 				
-				//TODO: set the default close operation of the frame to exit_on_close
-		            
+				//TODO(done): set the default close operation of the frame to exit_on_close
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);    
 				
 				frame.pack();             
 				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
+				frame.setResizable(false); //set resizable frame to false so that the user can't resize the frame
 	         }
 		 });
 	}
