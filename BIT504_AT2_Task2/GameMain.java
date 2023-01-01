@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.Graphics;
 
 
-public class GameMain extends JPanel implements ActionListener, MouseListener{
+public class GameMain extends JPanel implements ActionListener, MouseListener{ //ActionListener allows us to respond to action events
 	//Constants for game 
 	// number of ROWS by COLS cell constants 
 	public static final int ROWS = 3;     
@@ -26,12 +26,12 @@ public class GameMain extends JPanel implements ActionListener, MouseListener{
 	// the game board 
 	private Board board;
 	 	 
-	//TODO: create the enumeration for the variable below (GameState currentState)
-	//HINT all of the states you require are shown in the code within GameMain
+	// the current state of the game (e.g. Playing, Draw, Cross_won, Nought_won)
 	private GameState currentState; 
 	
 	// the current player
 	private Player currentPlayer; 
+	
 	// for displaying game status message
 	private JLabel statusBar;       
 	
