@@ -12,13 +12,12 @@ public class Cell {
 	/** Constructor to initialise this cell with the specified row and col */
 	public Cell(int row, int col) {
 		
-		// TODO(done): Initialise the variables row, col 
+		// Initialise the variables row, col, content 
 		this.row = row;
 		this.col = col;
 		this.content = Player.Empty;
-		
-		
-		//TODO(done): call the method that sets the cell content to EMPTY
+				
+		//Call the method that sets the cell content to EMPTY
 		clear();
 	}
 	
